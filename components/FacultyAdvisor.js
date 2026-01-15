@@ -68,7 +68,7 @@ export default function FacultyAdvisor() {
                             </div>
 
                             <div className={styles.quoteContainer}>
-                                <div className={styles.quoteIcon}>"</div>
+                                <div className={styles.quoteIcon}>&quot;</div>
                                 <p className={styles.quote}>{t.quote}</p>
                             </div>
                         </div>
