@@ -1,0 +1,29 @@
+{
+  "name": "nss-mjcet-website",
+  "version": "1.0.0",
+  "description": "Official NSS MJCET Website - Modern, Bilingual, CMS-Driven",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "init-admin": "node scripts/init-db.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.0.0",
+    "dotenv": "^17.2.3",
+    "framer-motion": "^12.26.2",
+    "mongoose": "^8.0.0",
+    "next": "^14.2.0",
+    "next-auth": "^4.24.7",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-icons": "^5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0"
+  }
+}

@@ -1,0 +1,124 @@
+.adminLayout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--marvel-bg);
+    color: var(--marvel-text);
+}
+
+[data-theme='light'] .adminLayout {
+    background-color: transparent;
+}
+
+.mainContent {
+    flex: 1;
+    margin-left: 280px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--marvel-bg);
+}
+
+[data-theme='light'] .mainContent {
+    background: transparent;
+}
+
+.topBar {
+    background: rgba(8, 12, 37, 0.6);
+    backdrop-filter: var(--marvel-glass);
+    padding: var(--space-4) var(--space-8);
+    border-bottom: 1px solid var(--marvel-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+}
+
+[data-theme='light'] .topBar {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 2px solid rgba(99, 102, 241, 0.2);
+    box-shadow: 0 4px 30px rgba(99, 102, 241, 0.1);
+}
+
+.pageTitle {
+    font-size: var(--text-xl);
+    font-weight: 800;
+    background: var(--marvel-title-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.topBarActions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.userName {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--marvel-text);
+}
+
+.userRole {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-primary-light);
+    background: var(--marvel-surface);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--marvel-border);
+    margin-top: 2px;
+}
+
+.contentArea {
+    flex: 1;
+    padding: var(--space-8);
+    overflow-y: auto;
+}
+
+[data-theme='light'] .contentArea {
+    background: transparent;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: var(--space-4);
+    background: var(--marvel-bg);
+    color: var(--marvel-text);
+}
+
+@media (max-width: 1024px) {
+    .mainContent {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .topBar {
+        padding: var(--space-4);
+    }
+
+    .topBarActions {
+        gap: var(--space-3);
+    }
+}

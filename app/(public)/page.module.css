@@ -1,0 +1,301 @@
+.home {
+    min-height: 100vh;
+    background: transparent;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Hero Section - World Class */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-40) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.heroContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.heroTagline {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-weight: 900;
+    margin-bottom: var(--space-6);
+    background: var(--marvel-accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+
+.heroTitle {
+    font-size: clamp(3.5rem, 12vw, 9rem);
+    font-weight: 900;
+    line-height: 0.85;
+    margin-bottom: var(--space-10);
+    background: var(--marvel-title-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.05em;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+}
+
+.heroDescription {
+    font-size: var(--text-xl);
+    line-height: 1.6;
+    margin-bottom: var(--space-12);
+    color: var(--marvel-text-dim);
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+}
+
+.heroActions {
+    display: flex;
+    gap: var(--space-6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stats Section */
+.stats {
+    padding: var(--space-40) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.sectionTitle {
+    font-size: var(--text-5xl);
+    font-weight: 900;
+    margin-bottom: var(--space-20);
+    text-align: center;
+    letter-spacing: -2px;
+    background: var(--marvel-title-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+}
+
+.statCard {
+    background: var(--marvel-surface);
+    backdrop-filter: var(--marvel-glass);
+    border: 1px solid var(--marvel-border);
+    padding: var(--space-12) var(--space-8);
+    border-radius: 40px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--marvel-shadow-inner);
+}
+
+.statCard:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--marvel-border-hover);
+    background: var(--marvel-surface-hover);
+    box-shadow: var(--marvel-glow-blue), var(--marvel-shadow-inner);
+}
+
+.statNumber {
+    font-size: var(--text-6xl);
+    font-weight: 900;
+    color: var(--marvel-text);
+    font-family: var(--font-heading);
+    margin-bottom: var(--space-2);
+    display: block;
+    letter-spacing: -3px;
+    background: var(--marvel-accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.statLabel {
+    font-size: var(--text-xs);
+    color: var(--marvel-text-dim);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Motto Section */
+.motto {
+    padding: var(--space-40) 0;
+}
+
+.mottoCard {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--marvel-surface);
+    backdrop-filter: var(--marvel-glass);
+    border: 1px solid var(--marvel-border);
+    padding: var(--space-32) var(--space-20);
+    border-radius: 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--marvel-shadow-outer), var(--marvel-shadow-inner);
+}
+
+.mottoCard::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--marvel-noise);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.mottoCard h2 {
+    font-size: var(--text-2xl);
+    font-weight: 900;
+    margin-bottom: var(--space-10);
+    color: var(--color-primary-light);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+.mottoText {
+    font-size: clamp(1.5rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    background: var(--marvel-title-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    max-width: 950px;
+    margin: 0 auto;
+    letter-spacing: -2px;
+}
+
+/* Objectives Section */
+.objectives {
+    padding: var(--space-40) 0;
+}
+
+.objectivesList {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    gap: var(--space-6);
+}
+
+.objectiveItem {
+    display: flex;
+    align-items: center;
+    gap: var(--space-10);
+    background: var(--marvel-surface);
+    backdrop-filter: var(--marvel-glass);
+    border: 1px solid var(--marvel-border);
+    padding: var(--space-8) var(--space-10);
+    border-radius: 32px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--marvel-shadow-inner);
+}
+
+.objectiveItem:hover {
+    transform: translateX(10px);
+    background: var(--marvel-surface-hover);
+    border-color: var(--marvel-border-hover);
+}
+
+.objectiveNumber {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--marvel-accent-gradient);
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: var(--text-2xl);
+    box-shadow: var(--marvel-glow-blue);
+}
+
+.objectiveItem p {
+    margin: 0;
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--marvel-text-dim);
+    transition: color 0.3s ease;
+}
+
+.objectiveItem:hover p {
+    color: var(--marvel-text);
+}
+
+/* CTA Section */
+.cta {
+    padding: var(--space-48) 0;
+    text-align: center;
+}
+
+.ctaContent h2 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 900;
+    margin-bottom: var(--space-10);
+    letter-spacing: -4px;
+    background: var(--marvel-title-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+.ctaContent p {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-16);
+    color: var(--marvel-text-dim);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 4rem;
+        letter-spacing: -2px;
+    }
+
+    .heroActions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .mottoCard {
+        padding: var(--space-12);
+    }
+
+    .mottoText {
+        font-size: 2rem;
+    }
+}
