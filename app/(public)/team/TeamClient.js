@@ -28,15 +28,18 @@ export default function TeamClient({ members }) {
     const t = translations[language];
 
     // Debug logging
-    console.log('TeamClient members:', members.map(m => ({
-        name: m.name,
-        linkedin: m.linkedin,
-        github: m.github
-    })));
+    console.log('=== TEAM CLIENT DEBUG ===');
+    console.log('Total members received:', members.length);
+    console.log('All members:', members);
 
     const gbsMembers = members.filter(m => m.role === 'GBS');
     const execomMembers = members.filter(m => m.role === 'Execom');
     const coreMembers = members.filter(m => m.role === 'Core');
+
+    console.log('GBS members:', gbsMembers.length, gbsMembers);
+    console.log('Execom members:', execomMembers.length, execomMembers);
+    console.log('Core members:', coreMembers.length, coreMembers);
+    console.log('=========================');
 
     const containerVariants = {
         hidden: { opacity: 0 },
