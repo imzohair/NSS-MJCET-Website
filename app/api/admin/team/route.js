@@ -21,7 +21,7 @@ export async function GET(request) {
 export async function POST(request) {
     try {
         const session = await getServerSession(authOptions);
-        if (!session || !['super_admin', 'member'].includes(session.user.role)) { // Basic RBAC
+        if (!session || !['super_admin', 'admin', 'member'].includes(session.user.role)) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
@@ -34,13 +34,21 @@ export async function POST(request) {
         const github = formData.get('github');
         const imageFile = formData.get('image');
 
+        console.log('Creating team member:', { name, role, position, email });
+
         if (!name || !role) {
             return NextResponse.json({ error: 'Name and Role are required' }, { status: 400 });
         }
 
         let imagePath = '';
         if (imageFile && imageFile.name) {
-            imagePath = await saveFile(imageFile);
+            try {
+                imagePath = await saveFile(imageFile);
+                console.log('Image saved:', imagePath);
+            } catch (imgError) {
+                console.error('Image upload error:', imgError);
+                return NextResponse.json({ error: 'Failed to upload image: ' + imgError.message }, { status: 500 });
+            }
         }
 
         await dbConnect();
@@ -55,8 +63,10 @@ export async function POST(request) {
             image: imagePath
         });
 
+        console.log('Team member created successfully:', member._id);
         return NextResponse.json({ message: 'Team member added', member }, { status: 201 });
     } catch (error) {
+        console.error('Failed to add team member:', error);
         return NextResponse.json({ error: 'Failed to add member: ' + error.message }, { status: 500 });
     }
 }
