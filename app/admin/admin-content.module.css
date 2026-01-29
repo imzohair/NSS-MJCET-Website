@@ -170,9 +170,9 @@
 .label {
     display: block;
     font-size: var(--text-sm);
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: var(--space-2);
-    color: #1f2937;
+    color: #1f2937 !important;
 }
 
 .input,
@@ -185,8 +185,13 @@
     border-radius: var(--radius-lg);
     transition: all var(--transition-base);
     font-family: var(--font-sans);
-    background: #ffffff;
-    color: #1f2937;
+    background: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: #9ca3af !important;
 }
 
 .input:focus,
@@ -198,7 +203,7 @@
 }
 
 .input:disabled {
-    background-color: var(--color-gray-100);
+    background-color: var(--color-gray-100) !important;
     cursor: not-allowed;
 }
 
