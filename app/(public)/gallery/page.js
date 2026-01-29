@@ -7,6 +7,9 @@ export const metadata = {
     description: 'Photo gallery of NSS MJCET events and activities',
 };
 
+// Revalidate this page every 60 seconds
+export const revalidate = 60;
+
 async function getGalleryImages() {
     await dbConnect();
 

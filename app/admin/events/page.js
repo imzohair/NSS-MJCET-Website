@@ -261,6 +261,13 @@ function EventFormModal({ event, onClose, onSuccess }) {
             const data = await response.json();
 
             if (response.ok) {
+                // Revalidate the public events page
+                await fetch('/api/revalidate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ path: '/events' }),
+                });
+
                 onSuccess();
             } else {
                 setError(data.error || 'Failed to save event');

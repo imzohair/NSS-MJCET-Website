@@ -50,14 +50,22 @@ export default function GalleryPage() {
             });
 
             if (res.ok) {
+                // Revalidate the public gallery page
+                await fetch('/api/revalidate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ path: '/gallery' }),
+                });
+
                 closeModal();
                 fetchGallery();
             } else {
-                alert('Failed to upload image');
+                const errorData = await res.json();
+                alert('Failed to upload image: ' + (errorData.error || 'Unknown error'));
             }
         } catch (error) {
             console.error('Error uploading image', error);
-            alert('Error uploading image');
+            alert('Error uploading image: ' + error.message);
         }
     };
 

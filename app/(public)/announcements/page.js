@@ -7,6 +7,9 @@ export const metadata = {
     description: 'Latest announcements and notices from NSS MJCET',
 };
 
+// Revalidate this page every 60 seconds
+export const revalidate = 60;
+
 async function getAnnouncements() {
     await dbConnect();
 
