@@ -261,12 +261,12 @@ function EventFormModal({ event, onClose, onSuccess }) {
             const data = await response.json();
 
             if (response.ok) {
-                // Revalidate the public events page
-                await fetch('/api/revalidate', {
+                // Revalidate the public events page (non-blocking)
+                fetch('/api/revalidate', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ path: '/events' }),
-                });
+                }).catch(err => console.log('Revalidation error:', err));
 
                 onSuccess();
             } else {

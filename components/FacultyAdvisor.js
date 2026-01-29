@@ -6,13 +6,13 @@ import { motion } from 'framer-motion';
 
 const translations = {
     en: {
-        title: 'Faculty Advisor',
+        title: 'Program Officer',
         name: 'Dr. Laxmi',
         department: 'Department of Mechanical Engineering',
         quote: 'Service to others is the rent you pay for your room here on earth. Through NSS, we cultivate compassionate leaders who dedicate themselves to the betterment of society.',
     },
     te: {
-        title: 'ఫ్యాకల్టీ సలహాదారు',
+        title: 'ప్రోగ్రామ్ అధికారి',
         name: 'డా. లక్ష్మి',
         department: 'మెకానికల్ ఇంజనీరింగ్ విభాగం',
         quote: 'ఇతరులకు సేవ చేయడం మీ భూమిపై గదికి మీరు చెల్లించే అద్దె. NSS ద్వారా, మేము సమాజ అభివృద్ధికి అంకితమైన దయగల నాయకులను పెంచుతాము.',

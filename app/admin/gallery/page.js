@@ -50,12 +50,12 @@ export default function GalleryPage() {
             });
 
             if (res.ok) {
-                // Revalidate the public gallery page
-                await fetch('/api/revalidate', {
+                // Revalidate the public gallery page (non-blocking)
+                fetch('/api/revalidate', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ path: '/gallery' }),
-                });
+                }).catch(err => console.log('Revalidation error:', err));
 
                 closeModal();
                 fetchGallery();

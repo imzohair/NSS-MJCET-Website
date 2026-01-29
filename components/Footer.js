@@ -130,15 +130,7 @@ export default function Footer() {
                 <div className={styles.footerBottom}>
                     <p>{t.copyright}</p>
                     <p>
-                        {language === 'en' ? 'Designed and Coded by ' : 'డిజైన్ మరియు కోడ్ చేసినవారు '}
-                        <a
-                            href="https://imzohair.github.io/mirzazohair.github.io/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.designerLink}
-                        >
-                            Mirza Zohair Ali Baig
-                        </a>
+                        {language === 'en' ? 'Designed NSS MJCET TECH TEAM' : 'డిజైన్ చేసింది NSS MJCET టెక్ టీమ్'}
                     </p>
                 </div>
             </div>

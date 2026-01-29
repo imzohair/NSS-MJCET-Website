@@ -58,12 +58,12 @@ export default function TeamPage() {
             });
 
             if (res.ok) {
-                // Revalidate the public team page
-                await fetch('/api/revalidate', {
+                // Revalidate the public team page (non-blocking)
+                fetch('/api/revalidate', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ path: '/team' }),
-                });
+                }).catch(err => console.log('Revalidation error:', err));
 
                 closeModal();
                 fetchTeam();
